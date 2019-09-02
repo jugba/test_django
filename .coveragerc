@@ -1,0 +1,9 @@
+[run]
+source = .
+omit = 
+  */.venv/*
+  */.vscode/*
+  */migrations/*
+  */tests.py
+  */manage.py
+  */wsgi.py
