@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
     'posts.apps.PostsConfig',
+    'elasticsearchapp.apps.ElasticsearchappConfig',
 ]
 
 MIDDLEWARE = [

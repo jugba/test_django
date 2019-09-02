@@ -4,6 +4,7 @@ celery
 coverage==4.5.4
 decorator==4.4.0
 Django==2.2.4
+elasticsearch-dsl===5.1.0
 jedi==0.15.1
 gunicorn
 parso==0.5.1
