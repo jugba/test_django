@@ -14,6 +14,11 @@ celery -A myproject worker -l info
 ## Run Celery beat
 celery -A myproject beat -l info
 
+# Download and extract elastic search
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.tar.gz
+- extract
+  tar -xzf elasticsearch-5.1.1.tar.gz
+  
 ##Start ElasticSearch
 ./elasticsearch-5.1.1/bin/elasticsearch
 
