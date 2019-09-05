@@ -4,3 +4,5 @@ htmlcov
 .env
 *.pyc
 *.DS_Store
+
+elasticsearch
