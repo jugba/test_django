@@ -5,6 +5,8 @@ coverage==4.5.4
 decorator==4.4.0
 Django==2.2.4
 django-celery-beat==1.5.0
+django-suit
+django-suit-redactor
 elasticsearch-dsl===5.1.0
 jedi==0.15.1
 gunicorn
