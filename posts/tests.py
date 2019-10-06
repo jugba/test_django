@@ -8,14 +8,13 @@ from posts.models import Post
 
 class PostTests(TestCase):
 
-  def setUp(self):
+  @mock.patch('elasticsearchapp.signals._index')
+  def setUp(self, patch):
     Post.objects.create(title="news", text="just a test", comments=[{"text": 'valid'}])
 
-  @mock.patch('elasitcsearchapp.signals.index_post')
-  def test_text_content(self,mock_post_save):
-    post =  Post.objects.get(id=1)
+  def test_text_content(self):
+    post =  Post.objects.get(title='news')
     expected_object_name = f'{post.text}'
-    self.assertTrue(mock_post_save.called, 'Failed to save post to Elastic Search')
     self.assertEquals(expected_object_name, 'just a test')
   
   def test_post_list_view(self):
