@@ -1,8 +1,10 @@
-##Installation
+[![CircleCI](https://circleci.com/gh/jugba/test_django.svg?style=svg)](https://circleci.com/gh/jugba/test_django)
+
+## Installation
 
 - pip install -r requirements.txt
 
-##migrate and connect db
+## migrate and connect db
 - python manage.py migrate
 
 - python manage.py runserver
