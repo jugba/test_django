@@ -78,19 +78,27 @@ SUIT_CONFIG = {
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# if ENVIRONMENT_NAME == 'circleci':
+#     DATABASES = {
+#             'default': {
+#                 'ENGINE': 'django.db.backends.sqlite3',
+#                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#             }
+#         }
+# else:
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USERNAME'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': os.environ.get('DATABASE_HOST'),
-        'PORT': os.environ.get('DATABASE_PORT'),
+        'default': {
+            # 'ENGINE': 'django.db.backends.sqlite3',
+            # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DATABASE_NAME'),
+            'USER': os.environ.get('DATABASE_USERNAME'),
+            'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+            'HOST': os.environ.get('DATABASE_HOST'),
+            'PORT': os.environ.get('DATABASE_PORT'),
 
+        }
     }
-}
 
 CELERY_BROKER_URL = os.environ.get('REDIS_URL')
 CELERY_TASK_DEFAULT_QUEUE = 'myapp'
@@ -137,4 +145,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-django_heroku.settings(locals())
+if ENVIRONMENT_NAME != 'circleci':
+    django_heroku.settings(locals())
