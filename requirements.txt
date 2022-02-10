@@ -3,7 +3,7 @@ backcall==0.1.0
 celery
 coverage==4.5.4
 decorator==4.4.0
-Django==2.2.13
+Django==2.2.27
 django-celery-beat==1.5.0
 django-suit
 django-suit-redactor
